@@ -1,6 +1,9 @@
 function convertToRoman(num) {
     // Check if the number is in the valid range
-    
+    if (num <0 || num > 100000) {
+		return "valid input";
+	}
+	
 
     // Roman numeral mapping
     const obj = [
@@ -22,14 +25,12 @@ function convertToRoman(num) {
     let result = "";
 
     // Construct the Roman numeral
-	if (num >=0 && num <= 100000) {
+	
         for (let [symbol, value] of obj) {
         while (num >= value) {
             result += symbol;
             num -= value;
         }
-    }
-
     }
     
     return result;
