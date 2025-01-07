@@ -5,18 +5,24 @@ function convertToRoman(num) {
     // Roman numeral mapping
     const obj = [
         ['M', 1000], 
-        ['D', 500], 
-        ['C', 100], 
-        ['L', 50], 
+		['CM',900],
+        ['D', 500],
+		['CD',400],
+        ['C', 100],
+		['XC',90],
+        ['L', 50],
+		['XL',40],
         ['X', 10], 
-        ['V', 5], 
+		['IX',9]
+        ['V', 5],
+		['IV',4],
         ['I', 1]
     ];
 
     let result = "";
 
     // Construct the Roman numeral
-	if (num >=0 && num <= 10000) {
+	if (num >=0 && num <= 100000) {
         for (let [symbol, value] of obj) {
         while (num >= value) {
             result += symbol;
